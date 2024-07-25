@@ -1,0 +1,33 @@
+{
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercer/node"
+    },
+    {
+      "src": "dist/**",
+      "use": "@vercer/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/product",
+      "dest": "index.js"
+    },
+    {
+        "src": "/",
+        "dest": "dist/index.html"
+      }, {
+        "src": "/add",
+        "dest": "dist/index.html"
+      }, 
+    {
+        "src": "/product/(.*)",
+        "dest": "index.js"
+      },
+    {
+      "src": "/(.+)",
+      "dest": "dist/$1tf"
+    }
+  ]
+}

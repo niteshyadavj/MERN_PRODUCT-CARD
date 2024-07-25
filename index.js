@@ -16,7 +16,6 @@ async function main() {
   console.log("database connected");
 }
   
-console.log("env", process.env.DB_PASSWORD); 
 server.use(cors());
 server.use(morgan("default"));   
 server.use(express.json());
