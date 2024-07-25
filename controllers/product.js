@@ -15,8 +15,8 @@ exports.addProducts = (req, res) => {
 
 exports.getProduct = (req, res) => {
   const id = +req.params.id;
-  const product = products.find((p) => p.id === id);
-  res.json(product);
+  const products = product.find((p) => p.id === id);
+  res.json(products);
 };
 
 exports.getAllProducts = async (req, res) => {

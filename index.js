@@ -9,7 +9,7 @@ const server = express();
 const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
 
-//db connection   
+//db connection    
 main().catch((err) => console.log(err));  
 async function main() { 
   await mongoose.connect(process.env.MONGO_DB);
@@ -29,4 +29,4 @@ server.use('*',(req,res)=>{
 server.listen(process.env.PORT, () => {
   console.log("server started"); 
 });
-  
+   
