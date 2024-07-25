@@ -19,6 +19,7 @@ async function main() {
 server.use(cors());
 server.use(morgan("default"));   
 server.use(express.json());
+server.use(express.urlencoded()); 
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
 server.use("/product", productRouter.router); //new route
 server.use("/user", userRouter.router); //new route
