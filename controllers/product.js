@@ -7,7 +7,7 @@ const Product = model.Product;
 
 exports.addProducts = (req, res) => {
   // console.log(req.body);
-  // products.push(req.body);
+  // products.push(req.body); 
   const product = new Product(req.body);
   product.save();
   res.status(201).json(req.body);
@@ -15,8 +15,8 @@ exports.addProducts = (req, res) => {
 
 exports.getProduct = (req, res) => {
   const id = +req.params.id;
-  const products = product.find((p) => p.id === id);
-  res.json(products);
+  const product = Product.find((p) => p.id === id);
+  res.json(product);
 };
 
 exports.getAllProducts = async (req, res) => {
