@@ -2,11 +2,11 @@
   "builds": [
     {
       "src": "index.js",
-      "use": "@vercer/node"
+      "use": "@vercel/node"
     },
     {
       "src": "dist/**",
-      "use": "@vercer/static"
+      "use": "@vercel/static"
     }
   ],
   "routes": [
