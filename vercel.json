@@ -1,34 +1,35 @@
+
 {
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "dist/index.html"
-    },
-    {
-      "src": "/product",
-      "dest": "index.js"
-    },
-    {
-      "src": "/add",
-      "dest": "dist/index.html"
-    },
-    {
-      "src": "/product/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "dist/$1"
-    }
-  ]
-}
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "dist/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/products",
+        "dest": "index.js"
+      },
+      {
+        "src": "/products/(.*)",
+        "dest": "index.js"
+      },
+      {
+        "src": "/add",
+        "dest": "dist/index.html"
+      },
+      {
+        "src": "/",
+        "dest": "dist/index.html"
+      },
+      {
+        "src": "/(.+)",
+        "dest": "dist/$1"
+      }
+    ]
+  }
