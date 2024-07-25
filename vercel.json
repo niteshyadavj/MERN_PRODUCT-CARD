@@ -17,11 +17,11 @@
       }, 
       {
         "src": "/product",
-        "dest": "index.js"
+        "dest": "dist/index.html"
       },
       {
         "src": "/product/(.*)",
-        "dest": "index.js"
+        "dest": "dist/index.html"
       },
       {
         "src": "/add",
