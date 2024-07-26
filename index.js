@@ -14,7 +14,7 @@ main().catch((err) => console.log(err));
 async function main() { 
   await mongoose.connect(process.env.MONGO_DB);
   console.log("database connected");
-}
+}  
   
 server.use(cors());
 server.use(morgan("default"));   
