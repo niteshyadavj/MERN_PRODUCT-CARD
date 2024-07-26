@@ -15,14 +15,28 @@ exports.addProducts = (req, res) => {
 
 exports.getProduct = (req, res) => {
   const id = +req.params.id;
-  const product = Product.find((p) => p.id === id);
-  res.json(product);
+  try{
+    const product = Product.find((p) => p.id === id);
+  res.status(200).json(product);
+  }
+  catch(error){
+    console.log(error);
+    res.status(500).json(error);
+    
+  }
 };
 
 exports.getAllProducts = async (req, res) => {
-  const products = await Product.find();
-  // console.log(products);
-  res.json(products);
+  try{
+    const products = await Product.find();
+    // console.log(products);
+    res.json(products);
+
+  }catch(error){
+    console.log(error);
+    res.status(500).json(error);
+    
+  }
 };
 
 exports.replaceProduct = async (req, res) => {
