@@ -17,7 +17,7 @@ async function main() {
 }  
   
 server.use(cors());
-server.use(morgan("default"));   
+server.use(morgan("default"));    
 server.use(express.json());
 server.use(express.urlencoded()); 
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
@@ -28,6 +28,6 @@ server.use('*',(req,res)=>{
 });
 
 server.listen(process.env.PORT, () => {
-  console.log("server started"); 
+  console.log("server started");  
 });
-   
+      
