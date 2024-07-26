@@ -14,13 +14,6 @@
       {
         "src": "/",
         "dest": "dist/index.html"
-      },{
-        "src": "/product",
-        "dest": "index.js"
-      },
-      {
-        "src": "/product/(.*)",
-        "dest": "index.js"
       },
       {
         "src": "/add",
