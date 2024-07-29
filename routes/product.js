@@ -5,6 +5,8 @@ const productController = require("../controllers/product");
 
 router
   .get("/", productController.getAllProducts)
+  .get('/ssr', productController.getAllProductsSSR)
+  .get('/add', productController.getAddForm)
   .get("/:id", productController.getProduct)
   .post("/", productController.addProducts)
   .put("/:id", productController.replaceProduct)

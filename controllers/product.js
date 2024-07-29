@@ -3,7 +3,25 @@ const fs = require("fs");
 // const products = data.products;
 const model = require("../model/product");
 const { error } = require("console");
+const path = require('path');
+const ejs = require('ejs');
 const Product = model.Product;
+
+exports.getAllProductsSSR = async (req, res) => {
+  const products = await Product.find();
+  ejs.renderFile(path.resolve(__dirname,'../pages/index.ejs'), {products:products}, function(err, str){
+    res.send(str);
+ });
+  
+};
+
+exports.getAddForm = async (req, res) => {
+  ejs.renderFile(path.resolve(__dirname,'../pages/add.ejs'), function(err, str){
+    res.send(str);
+ });
+  
+};
+
 
 exports.addProducts = (req, res) => {
   // console.log(req.body);

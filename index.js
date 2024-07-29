@@ -16,9 +16,9 @@ async function main() {
   console.log("database connected");
 }  
   
-server.use(cors());
+server.use(cors()); 
 server.use(morgan("default"));    
-server.use(express.json());
+server.use(express.json());  
 server.use(express.urlencoded()); 
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
 server.use("/product", productRouter.router); //new route
